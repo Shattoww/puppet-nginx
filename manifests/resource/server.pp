@@ -78,6 +78,7 @@
 #   [*proxy_cache_valid*]          - This directive sets the time for caching different replies.
 #   [*proxy_cache_lock*]           - This directive sets the locking mechanism for pouplating cache.
 #   [*proxy_cache_bypass*]         - Defines conditions which the response will not be cached
+#   [*proxy_cookie_path*]          - Sets a text that should be in the path attribute of the "Set-Cookie" header fields.
 #   [*proxy_method*]               - If defined, overrides the HTTP method of the request to be passed to the backend.
 #   [*proxy_http_version*]         - Sets the proxy http version
 #   [*proxy_set_body*]             - If defined, sets the body passed to the backend.
@@ -191,6 +192,7 @@ define nginx::resource::server (
   Optional[Variant[Array[String], String]] $proxy_cache_valid                    = undef,
   Optional[Enum['on', 'off']] $proxy_cache_lock                                  = undef,
   Optional[Variant[Array[String], String]] $proxy_cache_bypass                   = undef,
+  Optional[String] $proxy_cookie_path                                            = undef,
   Optional[String] $proxy_method                                                 = undef,
   Optional[String] $proxy_http_version                                           = undef,
   Optional[String] $proxy_set_body                                               = undef,

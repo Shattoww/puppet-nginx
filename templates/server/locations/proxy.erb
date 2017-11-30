@@ -17,6 +17,9 @@
 <% if @proxy_buffering -%>
     proxy_buffering       <%= @proxy_buffering %>;
 <% end -%>
+<% if @proxy_cookie_path -%>
+    proxy_cookie_path     <%= @proxy_cookie_path %>;
+<% end -%>
 <% unless @proxy_set_header.nil? -%>
     <%- @proxy_set_header.each do |header| -%>
     proxy_set_header      <%= header %>;
